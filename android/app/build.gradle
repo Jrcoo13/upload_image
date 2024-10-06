@@ -1,0 +1,48 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.upload_image"
+    compileSdk = 33
+    ndkVersion = 33
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8" // You can use a string here for Kotlin version
+    }
+
+    defaultConfig {
+        applicationId = "com.example.upload_image"
+        minSdk = flutter.minSdkVersion
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            // Use a signing config for release builds
+            signingConfig = signingConfigs.debug // Replace with your signing config for production
+            // Uncomment below to enable ProGuard/R8 if necessary
+            // minifyEnabled = true
+            // proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
+
+// Optional: Define any dependencies here if needed
+dependencies {
+    // Example: implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+}
